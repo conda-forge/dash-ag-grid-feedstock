@@ -1,5 +1,5 @@
 {% set name = "dash-ag-grid" %}
-{% set version = "2.4.0" %}
+{% set version = "31.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dash_ag_grid-{{ version }}.tar.gz
-  sha256: 091d6f70193ef18f534d6f18a2df69cdcbd9486fc6579572373bb554d3ab6bfd
+  sha256: 71841499df8e302c5a22a403006045aa6ae3757648992d30bd5279d06eda5d0f
 
 build:
   noarch: python
@@ -16,15 +16,22 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.6
     - pip
   run:
-    - python >=3.7
+    - python >=3.6
     - dash >=2
+    - dash-core-components
+    - dash-html-components
+    - dash-table
 
 test:
   imports:
     - dash_ag_grid
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://dash.plotly.com/dash-ag-grid
@@ -36,4 +43,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - rxm7706
     - JohanMabille
