@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dash_ag_grid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_ag_grid-{{ version }}.tar.gz
   sha256: 8f609601d25225a53130d5a2da1f43c685dc640c777a7de80bbaa070ded3d19c
 
 build:
@@ -16,10 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - dash >=2
     - dash-core-components
     - dash-html-components
@@ -31,6 +32,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
