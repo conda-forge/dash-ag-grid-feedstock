@@ -22,9 +22,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - dash >=2
-    - dash-core-components
-    - dash-html-components
-    - dash-table
 
 test:
   imports:
