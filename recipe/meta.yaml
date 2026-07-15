@@ -1,5 +1,5 @@
 {% set name = "dash-ag-grid" %}
-{% set version = "35.2.0" %}
+{% set version = "35.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dash_ag_grid-{{ version }}.tar.gz
-  sha256: 507f5dccf7235bf1b9af2c59d4cd0f12205db03c3489f605948f13c72bcece4f
+  sha256: 012f7e7d5bff4862d1377ccb545ae2c80577e7909e118a88f1c408ff03a2403e
 
 build:
   noarch: python
